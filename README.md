@@ -1,6 +1,6 @@
 # VitePress GitHub Portfolio
 
-문서 중심의 GitHub 포트폴리오 사이트를 VitePress로 구성한 기본 템플릿입니다. Cloudflare Pages의 Git 연동 배포를 전제로 작성되었습니다.
+문서 중심의 GitHub 포트폴리오 사이트를 VitePress로 구성한 기본 템플릿입니다. 현재 `https://docs.moonworld.uk` 로 운영 중이며, Cloudflare Pages의 Git 연동 배포를 전제로 작성되었습니다.
 
 ## 시작하기
 
@@ -18,6 +18,8 @@ npm run docs:dev
 - `projects/*.md`: 프로젝트 상세 문서
 - `archive/*.md`: 운영/구성 문서
 - `.vitepress/config.mts`: VitePress 설정
+- `public/robots.txt`: 검색 엔진 기본 정책
+- `public/site.webmanifest`: 웹 앱 메타데이터
 
 ## 프로젝트 문서 작성 규칙
 
@@ -62,6 +64,10 @@ Node.js version: 20
 
 4. 첫 배포 후 발급되는 `*.pages.dev` 도메인으로 동작을 확인합니다.
 5. 추후 커스텀 도메인이 필요하면 Pages 프로젝트의 `Custom domains`에서 연결합니다.
+
+현재 실서비스 도메인:
+
+- `https://docs.moonworld.uk`
 
 ## 사용자 맞춤 변경 포인트
 

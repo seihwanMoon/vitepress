@@ -44,3 +44,59 @@
   border-left: 3px solid var(--vp-c-brand-1);
   padding-left: 0.75rem;
 }
+
+.vp-doc .badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.vp-doc .badge {
+  border: 1px solid rgba(15, 118, 110, 0.22);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  background: rgba(15, 118, 110, 0.08);
+  font-size: 0.92rem;
+}
+
+.vp-doc .section-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 1.5rem 0;
+}
+
+.vp-doc .section-card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 18px;
+  padding: 1.1rem;
+  background:
+    radial-gradient(circle at top right, rgba(29, 78, 216, 0.1), transparent 40%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(15, 118, 110, 0.04));
+}
+
+.vp-doc .section-card h3,
+.vp-doc .section-card h4 {
+  margin-top: 0;
+}
+
+.vp-doc .key-points {
+  padding-left: 1rem;
+}
+
+.vp-doc .cta-panel {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border: 1px solid rgba(29, 78, 216, 0.22);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.08), rgba(15, 118, 110, 0.08));
+}
+
+.vp-doc .mini-heading {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+  margin-bottom: 0.4rem;
+}

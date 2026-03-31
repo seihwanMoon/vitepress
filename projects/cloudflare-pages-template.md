@@ -6,12 +6,12 @@ tags:
   - cloudflare
   - deployment
   - static-site
-status: draft
+status: active
 stack:
   - Cloudflare Pages
   - npm
   - GitHub
-demo: https://your-project.pages.dev
+demo: https://docs.moonworld.uk
 order: 20
 ---
 
@@ -19,12 +19,12 @@ order: 20
 
 ## 한 줄 소개
 
-정적 사이트를 GitHub 저장소와 연결해 프리뷰와 운영 배포를 간단히 관리하기 위한 템플릿입니다.
+정적 사이트를 GitHub 저장소와 연결하고, Cloudflare Pages와 커스텀 도메인까지 안정적으로 붙이는 운영 템플릿입니다.
 
 <div class="meta-list">
-  <div><strong>상태</strong><br />draft</div>
+  <div><strong>상태</strong><br />active</div>
   <div><strong>저장소</strong><br /><a href="https://github.com/seihwanMoon/vitepress">GitHub Repo</a></div>
-  <div><strong>배포</strong><br /><a href="https://your-project.pages.dev">Cloudflare Pages</a></div>
+  <div><strong>배포</strong><br /><a href="https://docs.moonworld.uk">docs.moonworld.uk</a></div>
 </div>
 
 ## 문제/목적
@@ -34,8 +34,9 @@ order: 20
 ## 주요 기능
 
 - GitHub 저장소 연결 기반 자동 배포
-- 브랜치별 프리뷰 배포
-- 정적 파일 루트 배포 구조
+- `pages.dev` 배포 후 커스텀 도메인 `docs.moonworld.uk` 연결
+- 정적 출력 디렉터리 기반 배포 설정
+- 배포 실패 시 Workers Builds와 Pages 설정 차이를 구분하는 운영 경험
 
 ## 기술 스택
 
@@ -46,9 +47,9 @@ order: 20
 ## 링크
 
 - GitHub: <https://github.com/seihwanMoon/vitepress>
-- Demo: <https://your-project.pages.dev>
+- Demo: <https://docs.moonworld.uk>
 - Related Docs: [사이트 운영 원칙](/archive/site-operations)
 
 ## 회고 또는 다음 계획
 
-실제 운영 환경에서는 Node 버전 고정, 빌드 명령 명시, 커스텀 도메인 연결 시 DNS 절차까지 문서화하는 것이 좋습니다.
+실제로 Pages와 Workers Builds를 혼동하기 쉬웠기 때문에, 이후에도 배포 문서에는 프로젝트 유형과 설정 차이를 분명히 남겨둘 필요가 있습니다.
