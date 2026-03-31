@@ -4,7 +4,7 @@ title: Projects
 
 # Projects
 
-문서 중심으로 관리하는 프로젝트 목록입니다. 현재는 `docs.moonworld.uk` 자체를 구성하는 핵심 문서 묶음을 먼저 정리하고 있습니다.
+문서 중심으로 관리하는 프로젝트 목록입니다. `Guide`가 진입 문서라면, 이 섹션은 구현 사례와 케이스 스터디에 가깝습니다.
 
 <div class="badge-row">
   <span class="badge">Repository-first</span>
@@ -36,3 +36,4 @@ title: Projects
 - 공통 frontmatter로 목록화와 후속 자동화를 대비합니다.
 - 프로젝트 노출 순서는 인덱스 문서에서 수동으로 제어합니다.
 - 실제 공개 가치가 있는 프로젝트가 추가되면 이 섹션에서 우선순위를 다시 조정합니다.
+- 처음 방문자에게는 [Guide](/guide/) 를 먼저 안내하고, 프로젝트 문서는 이후 참고 자료로 연결합니다.

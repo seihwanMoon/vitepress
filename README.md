@@ -14,6 +14,7 @@ npm run docs:dev
 ## 사이트 구조
 
 - `index.md`: 홈
+- `guide/*.md`: 시작 가이드와 운영 흐름 소개
 - `projects/index.md`: 프로젝트 목록
 - `projects/*.md`: 프로젝트 상세 문서
 - `archive/*.md`: 운영/구성 문서
@@ -73,6 +74,7 @@ Node.js version: 20
 
 - `.vitepress/config.mts`의 사이트 제목, 설명, 소셜 링크
 - `index.md`의 소개 문구
+- `guide/` 아래 입문 문서
 - `projects/` 아래 프로젝트 상세 문서
 - `archive/` 아래 운영 문서
 - 실제 배포 후 각 문서의 `demo` 링크

@@ -4,7 +4,7 @@ title: Archive
 
 # Archive
 
-프로젝트 자체보다 긴 호흡으로 관리해야 하는 운영 문서와 배포 가이드를 보관합니다.
+프로젝트 자체보다 긴 호흡으로 관리해야 하는 운영 문서와 배포 가이드를 보관합니다. `Guide`가 입문 문서라면, 이 섹션은 운영 참고서에 가깝습니다.
 
 <div class="section-grid">
   <div class="section-card">

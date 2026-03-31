@@ -46,11 +46,23 @@ export default defineConfig({
     logo: "/logo.svg",
     nav: [
       { text: "Home", link: "/" },
+      { text: "Guide", link: "/guide/" },
       { text: "Projects", link: "/projects/" },
       { text: "Archive", link: "/archive/" },
       { text: "GitHub", link: "https://github.com/seihwanMoon" }
     ],
     sidebar: {
+      "/guide/": [
+        {
+          text: "Guide",
+          items: [
+            { text: "시작하기", link: "/guide/" },
+            { text: "왜 Moonworld Docs인가", link: "/guide/why-moonworld-docs" },
+            { text: "프로젝트 문서화 방식", link: "/guide/project-docs-workflow" },
+            { text: "배포와 도메인 운영", link: "/guide/deployment-and-domain" }
+          ]
+        }
+      ],
       "/projects/": [
         {
           text: "Projects",

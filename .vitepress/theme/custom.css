@@ -100,3 +100,32 @@
   color: var(--vp-c-text-2);
   margin-bottom: 0.4rem;
 }
+
+.vp-doc .link-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin: 1.5rem 0;
+}
+
+.vp-doc .link-card {
+  display: block;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.vp-doc .link-card:hover {
+  border-color: rgba(29, 78, 216, 0.4);
+  background: rgba(29, 78, 216, 0.08);
+  transform: translateY(-2px);
+}
+
+.vp-doc .link-card strong {
+  display: block;
+  margin-bottom: 0.45rem;
+}
