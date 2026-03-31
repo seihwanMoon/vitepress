@@ -83,7 +83,8 @@ export default defineConfig({
             { text: "사이트 운영 원칙", link: "/archive/site-operations" },
             { text: "Cloudflare Pages 배포 가이드", link: "/archive/cloudflare-pages-deploy" },
             { text: "콘텐츠 작성 가이드", link: "/archive/content-guide" },
-            { text: "사이트 로드맵", link: "/archive/roadmap" }
+            { text: "사이트 로드맵", link: "/archive/roadmap" },
+            { text: "개발 핸드오프", link: "/archive/dev-handoff-2026-03-31" }
           ]
         }
       ]

@@ -23,4 +23,8 @@ title: Archive
     <h3><a href="/archive/roadmap">사이트 로드맵</a></h3>
     <p>다음 개선 후보와 공개 우선순위를 관리합니다.</p>
   </div>
+  <div class="section-card">
+    <h3><a href="/archive/dev-handoff-2026-03-31">개발 핸드오프</a></h3>
+    <p>오늘까지의 구현 상태와 내일 이어서 개발할 우선순위를 정리한 handoff 문서입니다.</p>
+  </div>
 </div>
