@@ -14,19 +14,24 @@ title: Projects
 
 <div class="project-grid">
   <div class="project-card">
-    <h3><a href="/projects/vitepress-portfolio">VitePress 포트폴리오</a></h3>
-    <p>사이트의 정보 구조, 테마, 메타데이터, 문서 UX를 정의하는 기준 문서입니다.</p>
+    <h3><a href="/projects/vitepress-portfolio">Moonworld Docs</a></h3>
+    <p>현재 사이트 자체를 구성하는 VitePress + Cloudflare Pages 기반 문서 포털입니다.</p>
     <p><a href="https://github.com/seihwanMoon/vitepress">GitHub 보기</a></p>
   </div>
   <div class="project-card">
-    <h3><a href="/projects/cloudflare-pages-template">Cloudflare Pages 배포 템플릿</a></h3>
-    <p>GitHub 연동, Pages 배포, 커스텀 도메인 연결까지 운영 흐름을 정리합니다.</p>
-    <p><a href="https://github.com/seihwanMoon/vitepress">GitHub 보기</a></p>
+    <h3><a href="/projects/skillrnd">skillrnd</a></h3>
+    <p>AI skills, vibe coding, manufacturing AI 주제를 VitePress로 출판형 정적 사이트로 정리하는 프로젝트입니다.</p>
+    <p><a href="https://github.com/seihwanMoon/skillrnd">GitHub 보기</a></p>
   </div>
   <div class="project-card">
-    <h3><a href="/projects/docs-workflow-lab">문서 워크플로우 실험</a></h3>
-    <p>프로젝트 설명 문서의 형식, frontmatter, 아카이브 기준을 다듬는 실험 문서입니다.</p>
-    <p><a href="https://github.com/seihwanMoon/vitepress">GitHub 보기</a></p>
+    <h3><a href="/projects/aistudio">aistudio</a></h3>
+    <p>중소제조기업을 위한 로컬 AutoML + MLOps 도구를 문서 중심으로 설계한 프로젝트입니다.</p>
+    <p><a href="https://github.com/seihwanMoon/aistudio">GitHub 보기</a></p>
+  </div>
+  <div class="project-card">
+    <h3><a href="/projects/deep-agents">deep-agents</a></h3>
+    <p>FastAPI 기반 에이전트 관리 백엔드와 경량 편집기 UX를 단계별로 구현하는 프로젝트입니다.</p>
+    <p><a href="https://github.com/seihwanMoon/deep-agents">GitHub 보기</a></p>
   </div>
 </div>
 

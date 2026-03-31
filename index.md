@@ -65,9 +65,9 @@ features:
     <p>왜 링크 모음이 아니라 문서형 포트폴리오를 택했는지, 사이트의 철학을 설명합니다.</p>
   </div>
   <div class="section-card">
-    <div class="mini-heading">Project</div>
-    <h3><a href="/projects/vitepress-portfolio">문서형 포트폴리오 구조</a></h3>
-    <p>현재 사이트를 기준으로 정보 구조, 테마, 메타데이터, 문서 UX를 정리합니다.</p>
+    <div class="mini-heading">Projects</div>
+    <h3><a href="/projects/skillrnd">실제 GitHub 프로젝트 보기</a></h3>
+    <p>`skillrnd`, `aistudio`, `deep-agents` 같은 실제 저장소를 문서형 케이스 스터디로 정리합니다.</p>
   </div>
   <div class="section-card">
     <div class="mini-heading">Operations</div>
@@ -85,7 +85,7 @@ features:
 
 ## 다음 확장 후보
 
-- 실제 GitHub 프로젝트별 상세 문서 추가
+- 실제 GitHub 프로젝트별 상세 문서 확장
 - 프로젝트별 스크린샷 또는 다이어그램 보강
 - 영어 버전 또는 공개용 케이스 스터디 섹션 추가
 

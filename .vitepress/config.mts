@@ -68,9 +68,10 @@ export default defineConfig({
           text: "Projects",
           items: [
             { text: "개요", link: "/projects/" },
-            { text: "VitePress 포트폴리오", link: "/projects/vitepress-portfolio" },
-            { text: "Cloudflare Pages 배포 템플릿", link: "/projects/cloudflare-pages-template" },
-            { text: "문서 워크플로우 실험", link: "/projects/docs-workflow-lab" }
+            { text: "Moonworld Docs", link: "/projects/vitepress-portfolio" },
+            { text: "skillrnd", link: "/projects/skillrnd" },
+            { text: "aistudio", link: "/projects/aistudio" },
+            { text: "deep-agents", link: "/projects/deep-agents" }
           ]
         }
       ],
