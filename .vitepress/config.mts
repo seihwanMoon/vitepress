@@ -66,7 +66,7 @@ function buildDirectorySidebarItems(relativeDir: string, depth = 0): DefaultThem
 
   if (indexFile) {
     items.push({
-      text: depth === 0 ? "개요" : "Overview",
+      text: "개요",
       link: toDocLink(path.join(relativeDir, indexFile.name))
     });
   }
@@ -90,11 +90,16 @@ function buildDirectorySidebarItems(relativeDir: string, depth = 0): DefaultThem
     const childItems = buildDirectorySidebarItems(childRelativeDir, depth + 1);
     const childIndexPath = path.join(docsRoot, childRelativeDir, "index.md");
     const fallbackTitle = sectionNames[entry.name] ?? humanizeSlug(entry.name);
+    const hasChildIndex = fs.existsSync(childIndexPath);
     const childTitle = fs.existsSync(childIndexPath)
       ? getDocTitle(childIndexPath, fallbackTitle)
       : fallbackTitle;
 
-    if (childItems.length <= 1) {
+    if (childItems.length === 0) {
+      continue;
+    }
+
+    if (hasChildIndex && childItems.length <= 1) {
       items.push({
         text: childTitle,
         link: toDocLink(path.join(childRelativeDir, "index.md"))
