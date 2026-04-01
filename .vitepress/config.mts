@@ -160,24 +160,8 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "News", link: "/news/" },
-      {
-        text: "Topics",
-        items: [
-          { text: "AI", link: "/topics/ai/" },
-          { text: "GitHub Study", link: "/topics/github-study/" },
-          { text: "Manufacturing AI", link: "/topics/manufacturing-ai/" },
-          { text: "Coding", link: "/topics/coding/" },
-          { text: "Automation", link: "/topics/automation/" },
-          { text: "Obsidian", link: "/topics/obsidian/" }
-        ]
-      },
-      {
-        text: "Hubs",
-        items: [
-          { text: "Skill Hub", link: "/hubs/skill-hub" },
-          { text: "MCP Hub", link: "/hubs/mcp-hub" }
-        ]
-      },
+      { text: "Topics", link: "/topics/" },
+      { text: "Hubs", link: "/hubs/" },
       { text: "Blog", link: "/blog/" }
     ],
     sidebar: {
