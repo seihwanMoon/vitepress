@@ -25,6 +25,16 @@ const latestUpdates = computed(() =>
         News, Topics, Hubs, Blog에서 최근 손본 문서를 카드형으로 모아 보여줍니다.
       </p>
     </div>
+    <div class="dashboard-actions">
+      <a href="/news/">News</a>
+      <a href="/topics/">Topics</a>
+      <a href="/hubs/">Hubs</a>
+      <a href="/blog/">Blog</a>
+      <a href="/internal/">Internal</a>
+    </div>
+    <div v-if="latestUpdates.length === 0" class="dashboard-empty">
+      아직 최근 업데이트 카드에 표시할 문서가 없습니다. `summary`와 `updated`를 가진 Markdown 문서를 추가하면 여기에 자동으로 표시됩니다.
+    </div>
     <div class="dashboard-grid">
       <a
         v-for="item in latestUpdates"
@@ -78,6 +88,28 @@ const latestUpdates = computed(() =>
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.dashboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-actions a {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dashboard-empty {
+  margin-bottom: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px dashed rgba(15, 118, 110, 0.28);
+  border-radius: 16px;
+  color: var(--vp-c-text-2);
+  background: rgba(15, 118, 110, 0.05);
 }
 
 .dashboard-card {

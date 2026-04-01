@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { createContentLoader } from "vitepress";
 
 const docsRoot = fileURLToPath(new URL("../../", import.meta.url));
-const sectionIndexUrls = new Set(["/news/", "/topics/", "/hubs/", "/blog/"]);
+const sectionIndexUrls = new Set(["/news/", "/topics/", "/hubs/", "/blog/", "/internal/"]);
 
 function resolveSourcePath(url: string) {
   const relative = url.replace(/^\//, "");

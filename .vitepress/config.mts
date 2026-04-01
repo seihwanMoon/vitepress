@@ -10,7 +10,8 @@ const sectionNames: Record<string, string> = {
   news: "News",
   topics: "Topics",
   hubs: "Hubs",
-  blog: "Blog"
+  blog: "Blog",
+  internal: "Internal"
 };
 
 function pageToUrl(page: string) {
@@ -174,39 +175,14 @@ export default defineConfig({
       "/topics/": createSectionSidebar("topics", "Topics"),
       "/hubs/": createSectionSidebar("hubs", "Hubs"),
       "/blog/": createSectionSidebar("blog", "Blog"),
-      "/guide/": [
+      "/internal/": [
         {
-          text: "Guide",
+          text: "Internal",
           items: [
-            { text: "시작하기", link: "/guide/" },
-            { text: "왜 Moonworld Docs인가", link: "/guide/why-moonworld-docs" },
-            { text: "프로젝트 문서화 방식", link: "/guide/project-docs-workflow" },
-            { text: "배포와 도메인 운영", link: "/guide/deployment-and-domain" }
-          ]
-        }
-      ],
-      "/projects/": [
-        {
-          text: "Projects",
-          items: [
-            { text: "개요", link: "/projects/" },
-            { text: "Moonworld Docs", link: "/projects/vitepress-portfolio" },
-            { text: "skillrnd", link: "/projects/skillrnd" },
-            { text: "aistudio", link: "/projects/aistudio" },
-            { text: "deep-agents", link: "/projects/deep-agents" }
-          ]
-        }
-      ],
-      "/archive/": [
-        {
-          text: "Archive",
-          items: [
-            { text: "개요", link: "/archive/" },
-            { text: "사이트 운영 원칙", link: "/archive/site-operations" },
-            { text: "Cloudflare Pages 배포 가이드", link: "/archive/cloudflare-pages-deploy" },
-            { text: "콘텐츠 작성 가이드", link: "/archive/content-guide" },
-            { text: "사이트 로드맵", link: "/archive/roadmap" },
-            { text: "개발 핸드오프", link: "/archive/dev-handoff-2026-03-31" }
+            { text: "개요", link: "/internal/" },
+            { text: "Guide", link: "/internal/guide/" },
+            { text: "Projects", link: "/internal/projects/" },
+            { text: "Archive", link: "/internal/archive/" }
           ]
         }
       ]
