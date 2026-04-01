@@ -13,7 +13,7 @@ export default defineConfig({
   lang: "ko-KR",
   title: "Moonworld Docs",
   titleTemplate: ":title | Moonworld Docs",
-  description: "seihwanMoon의 프로젝트, 운영 메모, 배포 기록을 정리한 문서형 포트폴리오",
+  description: "AI, GitHub, 코딩, 제조 AI, 업무자동화, Obsidian 정보를 구조화해 제공하는 지식 허브",
   cleanUrls: true,
   lastUpdated: true,
   sitemap: {
@@ -46,12 +46,79 @@ export default defineConfig({
     logo: "/logo.svg",
     nav: [
       { text: "Home", link: "/" },
-      { text: "Guide", link: "/guide/" },
-      { text: "Projects", link: "/projects/" },
-      { text: "Archive", link: "/archive/" },
-      { text: "GitHub", link: "https://github.com/seihwanMoon" }
+      { text: "News", link: "/news/" },
+      {
+        text: "Topics",
+        items: [
+          { text: "AI", link: "/topics/ai/" },
+          { text: "GitHub Study", link: "/topics/github-study/" },
+          { text: "Manufacturing AI", link: "/topics/manufacturing-ai/" },
+          { text: "Coding", link: "/topics/coding/" },
+          { text: "Automation", link: "/topics/automation/" },
+          { text: "Obsidian", link: "/topics/obsidian/" }
+        ]
+      },
+      {
+        text: "Hubs",
+        items: [
+          { text: "Skill Hub", link: "/hubs/skill-hub" },
+          { text: "MCP Hub", link: "/hubs/mcp-hub" }
+        ]
+      },
+      { text: "Blog", link: "/blog/" }
     ],
     sidebar: {
+      "/news/": [
+        {
+          text: "News",
+          items: [
+            { text: "개요", link: "/news/" },
+            { text: "큐레이션 원칙", link: "/news/curation-principles" }
+          ]
+        }
+      ],
+      "/topics/": [
+        {
+          text: "Topics",
+          items: [
+            { text: "개요", link: "/topics/" },
+            { text: "AI", link: "/topics/ai/" },
+            { text: "GitHub Study", link: "/topics/github-study/" },
+            { text: "Manufacturing AI", link: "/topics/manufacturing-ai/" },
+            { text: "Coding", link: "/topics/coding/" },
+            { text: "Automation", link: "/topics/automation/" },
+            { text: "Obsidian", link: "/topics/obsidian/" }
+          ]
+        },
+        {
+          text: "Coding",
+          items: [
+            { text: "개요", link: "/topics/coding/" },
+            { text: "Claude", link: "/topics/coding/claude" },
+            { text: "Codex", link: "/topics/coding/codex" },
+            { text: "Gemini", link: "/topics/coding/gemini" }
+          ]
+        }
+      ],
+      "/hubs/": [
+        {
+          text: "Hubs",
+          items: [
+            { text: "개요", link: "/hubs/" },
+            { text: "Skill Hub", link: "/hubs/skill-hub" },
+            { text: "MCP Hub", link: "/hubs/mcp-hub" }
+          ]
+        }
+      ],
+      "/blog/": [
+        {
+          text: "Blog",
+          items: [
+            { text: "개요", link: "/blog/" },
+            { text: "정보구조 개편 기록", link: "/blog/2026-04-01-information-architecture" }
+          ]
+        }
+      ],
       "/guide/": [
         {
           text: "Guide",

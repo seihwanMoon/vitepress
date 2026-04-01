@@ -129,3 +129,23 @@
   display: block;
   margin-bottom: 0.45rem;
 }
+
+.vp-doc .topic-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 1.5rem 0;
+}
+
+.vp-doc .topic-card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 18px;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at top right, rgba(15, 118, 110, 0.1), transparent 35%),
+    linear-gradient(180deg, rgba(29, 78, 216, 0.04), rgba(15, 23, 42, 0.08));
+}
+
+.vp-doc .topic-card h3 {
+  margin-top: 0;
+}

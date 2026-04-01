@@ -1,6 +1,6 @@
 # VitePress GitHub Portfolio
 
-문서 중심의 GitHub 포트폴리오 사이트를 VitePress로 구성한 기본 템플릿입니다. 현재 `https://docs.moonworld.uk` 로 운영 중이며, Cloudflare Pages의 Git 연동 배포를 전제로 작성되었습니다.
+AI, GitHub, 코딩, 제조 AI, 업무자동화, Obsidian 관련 정보를 주제별로 정리하는 VitePress 기반 지식 허브입니다. 현재 `https://docs.moonworld.uk` 로 운영 중이며, Cloudflare Pages의 Git 연동 배포를 전제로 작성되었습니다.
 
 ## 시작하기
 
@@ -14,41 +14,44 @@ npm run docs:dev
 ## 사이트 구조
 
 - `index.md`: 홈
-- `guide/*.md`: 시작 가이드와 운영 흐름 소개
-- `projects/index.md`: 프로젝트 목록
-- `projects/*.md`: 프로젝트 상세 문서
-- `archive/*.md`: 운영/구성 문서
+- `news/*.md`: 큐레이션/업데이트 문서
+- `topics/**/*.md`: 관심사별 주제 문서
+- `hubs/*.md`: 링크/리소스 허브
+- `blog/*.md`: 운영 기록과 정리 글
 - `.vitepress/config.mts`: VitePress 설정
 - `public/robots.txt`: 검색 엔진 기본 정책
 - `public/site.webmanifest`: 웹 앱 메타데이터
 
-## 프로젝트 문서 작성 규칙
+## 콘텐츠 작성 규칙
 
-각 프로젝트 문서는 아래 frontmatter를 기본으로 사용합니다.
+각 콘텐츠는 아래 frontmatter를 기본으로 사용합니다.
 
 ```md
 ---
-title: 프로젝트 이름
-repo: https://github.com/seihwanMoon/vitepress
-summary: 한 줄 소개
+title: 문서 제목
+summary: 카드와 목록에서 사용할 한 줄 소개
+section: News
+updated: 2026-04-01
 tags:
   - vitepress
-status: active
-stack:
-  - TypeScript
-demo: https://example.pages.dev
-order: 10
 ---
 ```
+
+`updated` 값이 있으면 홈 대시보드의 최신 업데이트 카드 후보에 들어갑니다.
+
+## 관리 방식
+
+- 메뉴는 폴더 구조로 관리합니다.
+- 실제 콘텐츠는 Markdown 파일로 관리합니다.
+- 홈의 최신 업데이트 카드는 Markdown frontmatter를 읽어 build 시 생성합니다.
 
 권장 본문 섹션:
 
 1. 한 줄 소개
 2. 문제/목적
 3. 주요 기능
-4. 기술 스택
-5. 링크
-6. 회고 또는 다음 계획
+4. 참고 링크
+5. 다음 업데이트
 
 ## Cloudflare Pages 배포
 
@@ -74,7 +77,5 @@ Node.js version: 20
 
 - `.vitepress/config.mts`의 사이트 제목, 설명, 소셜 링크
 - `index.md`의 소개 문구
-- `guide/` 아래 입문 문서
-- `projects/` 아래 프로젝트 상세 문서
-- `archive/` 아래 운영 문서
-- 실제 배포 후 각 문서의 `demo` 링크
+- `news/`, `topics/`, `hubs/`, `blog/` 아래 문서
+- 각 문서 frontmatter의 `summary`, `section`, `updated`
