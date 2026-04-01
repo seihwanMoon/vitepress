@@ -1,12 +1,125 @@
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitepress";
+import type { DefaultTheme } from "vitepress";
 
 const siteUrl = "https://docs.moonworld.uk";
+const docsRoot = fileURLToPath(new URL("../", import.meta.url));
+const sectionNames: Record<string, string> = {
+  news: "News",
+  topics: "Topics",
+  hubs: "Hubs",
+  blog: "Blog"
+};
 
 function pageToUrl(page: string) {
   const cleanPath = page.replace(/(^|\/)index\.md$/, "$1").replace(/\.md$/, "");
   const pathname = cleanPath ? `/${cleanPath}` : "/";
 
   return new URL(pathname, siteUrl).toString();
+}
+
+function humanizeSlug(input: string) {
+  return input
+    .split("-")
+    .map((part) => (part ? part[0].toUpperCase() + part.slice(1) : part))
+    .join(" ");
+}
+
+function readFrontmatterField(filePath: string, field: string) {
+  const source = fs.readFileSync(filePath, "utf8");
+  const match = source.match(new RegExp(`^${field}:\\s*(.+)$`, "m"));
+
+  return match?.[1]?.trim().replace(/^["']|["']$/g, "");
+}
+
+function getDocTitle(filePath: string, fallback: string) {
+  return readFrontmatterField(filePath, "title") ?? fallback;
+}
+
+function toDocLink(relativeFilePath: string) {
+  const normalized = relativeFilePath.replace(/\\/g, "/");
+  const clean = normalized.replace(/index\.md$/, "").replace(/\.md$/, "");
+
+  return clean ? `/${clean}` : "/";
+}
+
+function createDocLinkItem(relativeFilePath: string, fallback: string): DefaultTheme.SidebarItem {
+  const absoluteFilePath = path.join(docsRoot, relativeFilePath);
+
+  return {
+    text: getDocTitle(absoluteFilePath, fallback),
+    link: toDocLink(relativeFilePath)
+  };
+}
+
+function buildDirectorySidebarItems(relativeDir: string, depth = 0): DefaultTheme.SidebarItem[] {
+  const absoluteDir = path.join(docsRoot, relativeDir);
+  const entries = fs
+    .readdirSync(absoluteDir, { withFileTypes: true })
+    .filter((entry) => !entry.name.startsWith("."))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const items: DefaultTheme.SidebarItem[] = [];
+  const indexFile = entries.find((entry) => entry.isFile() && entry.name === "index.md");
+
+  if (indexFile) {
+    items.push({
+      text: depth === 0 ? "개요" : "Overview",
+      link: toDocLink(path.join(relativeDir, indexFile.name))
+    });
+  }
+
+  for (const entry of entries) {
+    if (entry.isFile() && entry.name.endsWith(".md") && entry.name !== "index.md") {
+      items.push(
+        createDocLinkItem(
+          path.join(relativeDir, entry.name),
+          humanizeSlug(entry.name.replace(/\.md$/, ""))
+        )
+      );
+      continue;
+    }
+
+    if (!entry.isDirectory()) {
+      continue;
+    }
+
+    const childRelativeDir = path.join(relativeDir, entry.name);
+    const childItems = buildDirectorySidebarItems(childRelativeDir, depth + 1);
+    const childIndexPath = path.join(docsRoot, childRelativeDir, "index.md");
+    const fallbackTitle = sectionNames[entry.name] ?? humanizeSlug(entry.name);
+    const childTitle = fs.existsSync(childIndexPath)
+      ? getDocTitle(childIndexPath, fallbackTitle)
+      : fallbackTitle;
+
+    if (childItems.length <= 1) {
+      items.push({
+        text: childTitle,
+        link: toDocLink(path.join(childRelativeDir, "index.md"))
+      });
+      continue;
+    }
+
+    items.push({
+      text: childTitle,
+      collapsed: true,
+      items: childItems
+    });
+  }
+
+  return items;
+}
+
+function createSectionSidebar(sectionDir: string, sectionLabel: string): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: sectionLabel,
+      collapsed: false,
+      items: buildDirectorySidebarItems(sectionDir)
+    }
+  ];
 }
 
 export default defineConfig({
@@ -68,57 +181,10 @@ export default defineConfig({
       { text: "Blog", link: "/blog/" }
     ],
     sidebar: {
-      "/news/": [
-        {
-          text: "News",
-          items: [
-            { text: "개요", link: "/news/" },
-            { text: "큐레이션 원칙", link: "/news/curation-principles" }
-          ]
-        }
-      ],
-      "/topics/": [
-        {
-          text: "Topics",
-          items: [
-            { text: "개요", link: "/topics/" },
-            { text: "AI", link: "/topics/ai/" },
-            { text: "GitHub Study", link: "/topics/github-study/" },
-            { text: "Manufacturing AI", link: "/topics/manufacturing-ai/" },
-            { text: "Coding", link: "/topics/coding/" },
-            { text: "Automation", link: "/topics/automation/" },
-            { text: "Obsidian", link: "/topics/obsidian/" }
-          ]
-        },
-        {
-          text: "Coding",
-          items: [
-            { text: "개요", link: "/topics/coding/" },
-            { text: "Claude", link: "/topics/coding/claude" },
-            { text: "Codex", link: "/topics/coding/codex" },
-            { text: "Gemini", link: "/topics/coding/gemini" }
-          ]
-        }
-      ],
-      "/hubs/": [
-        {
-          text: "Hubs",
-          items: [
-            { text: "개요", link: "/hubs/" },
-            { text: "Skill Hub", link: "/hubs/skill-hub" },
-            { text: "MCP Hub", link: "/hubs/mcp-hub" }
-          ]
-        }
-      ],
-      "/blog/": [
-        {
-          text: "Blog",
-          items: [
-            { text: "개요", link: "/blog/" },
-            { text: "정보구조 개편 기록", link: "/blog/2026-04-01-information-architecture" }
-          ]
-        }
-      ],
+      "/news/": createSectionSidebar("news", "News"),
+      "/topics/": createSectionSidebar("topics", "Topics"),
+      "/hubs/": createSectionSidebar("hubs", "Hubs"),
+      "/blog/": createSectionSidebar("blog", "Blog"),
       "/guide/": [
         {
           text: "Guide",
